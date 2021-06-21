@@ -1,0 +1,66 @@
+@import 'var'
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    outline: none
+    line-height: 1.2
+
+body
+    font-family: 'Roboto', sans-serif // 400 500 700
+    font-weight: 400
+    font-size: 18px
+    background-color: #fff
+    &::-webkit-scrollbar
+        width: 7px
+        background: #fff
+    &::-webkit-scrollbar-track
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+
+    &::-webkit-scrollbar-thumb
+        background: $beige
+a
+    text-decoration: none
+    color: inherit
+
+input, textarea
+    outline: none
+    font-family: 'Roboto', sans-serif
+
+section
+    padding: 50px 0
+main > section:nth-of-type(1)
+    padding-top: 100px
+
+@media screen and ( max-width: 768px )
+    main > section:nth-of-type(1)
+        padding-top: 150px
+    section
+        padding: 30px 0
+
+@media screen and ( max-width: 480px )
+    main >  section:nth-of-type(1)
+        padding-top: 100px
+@import 'header'
+// @import 'intro'
+// @import 'info'
+// @import 'categories'
+// @import 'promotions'
+// @import 'product-card'
+// @import 'catalog'
+// @import 'action'
+// @import 'callback'
+@import 'seo'
+// @import 'footer'
+// @import 'breadcrumbs'
+// @import 'about'
+// @import 'contacts'
+// @import 'instagram'
+// @import 'delivery'
+// @import 'how-we-work'
+// @import 'product'
+// @import 'cart'
+
+@media screen and ( max-width: 580px )
+    body
+        font-size: 14px
