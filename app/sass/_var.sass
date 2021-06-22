@@ -99,13 +99,22 @@ $light: #828282
     background-repeat: no-repeat
 .pt
     padding-top: 100px
-
+@media screen and ( max-width: 1000px )
+    .title-1, h1
+        font-size: 48px
+@media screen and ( max-width: 768px )
+    .title-1, h1
+        font-size: 36px
+    .title-2, h2
+        font-size: 24px
+    .title-3, h3
+        font-size: 18px
+    .title-3_bold
+        font-size: 18px
+    body
+        font-size: 16px
 @media screen and ( max-width: 580px )
     .title-1, h1
         font-size: 24px
     .title-2, h2
         font-size: 20px
-    .title-3, h3
-        font-size: 18px
-    .strong, strong
-        font-size: 16px

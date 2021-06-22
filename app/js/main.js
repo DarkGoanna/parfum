@@ -23,8 +23,8 @@ burger.addEventListener('click', () => {
   // открываем/закрываем меню
   burger.closest('.header__nav').classList.toggle('open');
 
-  const menuOpen = document.querySelector('.menu.open');
-  const menu = document.querySelector('.menu');
+  const menuOpen = document.querySelector('.header__nav.open');
+  const menu = document.querySelector('.header__nav');
 
   if (menuOpen) {
     // при открытии/закрытии закрыть все подменю
@@ -58,3 +58,43 @@ document.addEventListener('scroll', () => {
     header.classList.remove('fixed');
   }
 })
+
+// banner
+new Swiper(".banner", {
+  speed: 600,
+  parallax: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".banner .swiper-button-next",
+    prevEl: ".banner .swiper-button-prev",
+  },
+});
+
+// categories
+new Swiper(".categories__slider", {
+  speed: 600,
+  slidesPerView: 3,
+  spaceBetween: 23,
+  navigation: {
+    nextEl: ".categories__slider .swiper-button-next",
+    prevEl: ".categories__slider .swiper-button-prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+    581: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 23,
+    },
+  },
+});
+

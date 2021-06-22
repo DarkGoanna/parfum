@@ -1,4 +1,7 @@
 .header
+  font-weight: 500
+  font-size: 16px
+  color: $dark
   &.fixed
     position: fixed
     top: 0
@@ -23,6 +26,9 @@
     & a
       display: flex
       align-items: center
+      & span
+        font-size: inherit
+        font-weight: 500
     & img
       margin-right: 8px
   &__search
@@ -36,6 +42,9 @@
     display: flex
     align-items: center
     padding: 0
+    & a
+      font-size: inherit
+      font-weight: 500
     & > li
       list-style: none
       &:not(:last-child)
@@ -54,6 +63,7 @@
         transform: rotate(45deg)
         transform-origin: center
         transition: .2s
+        cursor: pointer
       & > .sub-menu
         position: absolute
         top: 100%
@@ -63,11 +73,12 @@
         width: max-content
         max-width: 250px
         transform: translateY(10px)
-        transition: .2s
+        transition: .2s .05s
         opacity: 0
         visibility: hidden
         border-top: 10px solid transparent
         background-clip: padding-box
+        z-index: 2
         & > li
           list-style: none
           position: relative
@@ -97,7 +108,8 @@
             color: #fff
             font-weight: 400
             font-size: 14px
-      &:hover
+      &:hover,
+      &.active
         & > .sub-menu
           transform: translateY(0)
           transition: .2s
@@ -115,10 +127,14 @@
     justify-content: space-between
     border: none
     background: transparent
+    cursor: pointer
     & span
       width: 100%
       height: 2px
       background: $dark
+    &.open
+      & span
+        background: #fff
 
 @media screen and ( max-width: 1200px )
   .header
@@ -139,8 +155,10 @@
       display: grid
       grid-template-areas: 'logo phone menu''logo search menu'
       grid-template-columns: 100px 175px 1fr
+      padding-right: 60px
     &__logo
       grid-area: logo
+      margin-right: 10px
     &__phone
       grid-area: phone
       margin-right: 10px
@@ -153,6 +171,8 @@
     & .container
       padding-top: 13px
       padding-bottom: 13px
+    &__logo
+      margin-right: 20px
     &__burger
       display: flex
       position: fixed
@@ -160,10 +180,7 @@
       right: 100px
       z-index: 2
       & span
-        background: #fff
-    &__menu
-      grid-area: auto
-      flex-direction: column
+        background: $dark
     &__nav
       position: fixed
       top: 0
@@ -171,7 +188,77 @@
       width: 100%
       height: 100vh
       padding-top: 40%
-      background: $dark
+      background: transparent
+      transition: .2s
+      & .header
+        &__menu
+          grid-area: auto
+          flex-direction: column
+          width: 90%
+          margin: auto
+          align-items: start
+          opacity: 0
+          visibility: hidden
+          transform: translateY(-50px)
+          & > li
+            margin-right: 0
+            width: 100%
+          & a
+            color: #fff
+            font-size: 24px
+          & .menu-item-has-children
+            & .menu__arrow
+              border-color: #fff
+              border-width: 2px
+              top: 10px
+            & > .sub-menu
+              position: relative
+              transform: translateY(0)
+              height: 0
+              padding: 0
+              margin: 0
+              border-top-width: 0
+              max-width: max-content
+              padding-left: 15px
+              & > li:not(:last-child)
+                margin-bottom: 4px
+            &:hover,
+            &.active
+              & > .sub-menu
+                height: auto
+                border-top-width: 10px
+      &.open
+        background: $dark
+        transition: .2s
+        & .header
+          &__menu
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+@media screen and ( max-width: 580px )
+  .header
+    &__nav
+      &.open
+        & .header
+          &__menu
+            & .menu-item-has-children
+              &:hover
+                & > .sub-menu
+                  height: 0
+                  border-top-width: 0
+                  opacity: 0
+                  visibility: hidden
+                & > .menu__arrow
+                  transform: rotate(45deg)
+              &.active
+                &:hover
+                  & > .sub-menu
+                    height: auto
+                    border-top-width: 10px
+                    opacity: 1
+                    visibility: visible
+                  & > .menu__arrow
+                    transform: rotate(-135deg)
 @media screen and ( max-width: 480px )
   .header
     & .container
