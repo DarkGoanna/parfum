@@ -11,18 +11,17 @@ if (document.querySelector('.grid')) {
 const menuItemWithSubmenu = document.querySelectorAll('.menu-item-has-children');
 menuItemWithSubmenu.forEach(item => {
   if (item.lastElementChild.className !== 'menu__arrow') {
-    const left = item.firstElementChild.width - 15;
     item.insertAdjacentHTML('beforeend', '<span class="menu__arrow"></span>');
   }
 })
 
-// menu
+// меню
 const burger = document.querySelector('.header__burger');
 burger.addEventListener('click', () => {
   document.querySelector('html').classList.toggle('scrollOff');
   burger.classList.toggle('open')
   // открываем/закрываем меню
-  burger.closest('.menu').classList.toggle('open');
+  burger.closest('.header__nav').classList.toggle('open');
 
   const menuOpen = document.querySelector('.menu.open');
   const menu = document.querySelector('.menu');
