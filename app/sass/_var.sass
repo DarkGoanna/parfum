@@ -22,6 +22,7 @@
 $dark: #464B49
 $beige: #F9E6CD
 $light: #828282
+$yellow: #FFD700
 
 .title-1, h1
     font-weight: 500
@@ -45,21 +46,20 @@ $light: #828282
     font-weight: 400
     font-size: 18px
     cursor: pointer
-    border-radius: 60px
+    border-radius: 50%
     display: flex
     align-items: center
     justify-content: center
     width: 174px
     height: 70px
     color: #000
-    border: 1px solid transparent
+    border: 1px solid #000
     transition: .2s
     &_active
         background: $beige
     &:hover,
     &:active
         background: $beige
-        border-color: #000
         transition: .2s
 .container
     max-width: 1230px + (2 * 15px)
@@ -83,8 +83,7 @@ $light: #828282
     display: flex
     justify-content: space-between
     height: 100%
-    width: calc( 100% + 30px )
-    margin: 0 -15px
+    width: 100%
     position: absolute
     top: 0
     left: 0
@@ -99,6 +98,7 @@ $light: #828282
     background-repeat: no-repeat
 .pt
     padding-top: 100px
+
 @media screen and ( max-width: 1000px )
     .title-1, h1
         font-size: 48px
@@ -118,3 +118,5 @@ $light: #828282
         font-size: 24px
     .title-2, h2
         font-size: 20px
+    .btn
+        height: 50px

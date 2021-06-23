@@ -50,13 +50,10 @@ function openSubmenu(event) {
 
 // fixed header
 const header = document.querySelector('.header');
+header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
 
-document.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    header.classList.add('fixed');
-  } else {
-    header.classList.remove('fixed');
-  }
+window.addEventListener('resize', () => {
+  header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
 })
 
 // banner
@@ -76,8 +73,9 @@ new Swiper(".banner", {
 // categories
 new Swiper(".categories__slider", {
   speed: 600,
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 23,
+  loop: true,
   navigation: {
     nextEl: ".categories__slider .swiper-button-next",
     prevEl: ".categories__slider .swiper-button-prev",
@@ -85,15 +83,13 @@ new Swiper(".categories__slider", {
   breakpoints: {
     320: {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 23,
     },
     581: {
       slidesPerView: 2,
-      spaceBetween: 10,
     },
     769: {
       slidesPerView: 3,
-      spaceBetween: 23,
     },
   },
 });
