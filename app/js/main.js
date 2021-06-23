@@ -1,6 +1,7 @@
 // фон сетки
 if (document.querySelector('.grid')) {
   document.querySelectorAll('.grid').forEach(box => {
+    box.closest('.container').style.position = 'relative';
     for (let i = 9; i > 0; i--) {
       box.insertAdjacentHTML('afterbegin', '<span class="grid__line"></span>')
     }
@@ -48,13 +49,26 @@ function openSubmenu(event) {
   }
 }
 
+// фиксим проваливание блока идущего после fixed header
+function fixHeaderHeight() {
+  header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
+}
+
 // fixed header
 const header = document.querySelector('.header');
-header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
 
-window.addEventListener('resize', () => {
-  header.nextElementSibling.style.paddingTop = `${header.clientHeight}px`;
-})
+document.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('fixed');
+    fixHeaderHeight();
+  } else {
+    header.classList.remove('fixed');
+    fixHeaderHeight()
+  }
+});
+
+// при ресайзе пересчитываем высоту header
+window.addEventListener('resize', fixHeaderHeight)
 
 // banner
 new Swiper(".banner", {
@@ -75,7 +89,6 @@ new Swiper(".categories__slider", {
   speed: 600,
   slidesPerView: 1,
   spaceBetween: 23,
-  loop: true,
   navigation: {
     nextEl: ".categories__slider .swiper-button-next",
     prevEl: ".categories__slider .swiper-button-prev",
@@ -94,3 +107,29 @@ new Swiper(".categories__slider", {
   },
 });
 
+// catalog
+// if (document.querySelector('.catalog__slider')) {
+//   document.querySelectorAll('.catalog__slider').forEach(slider => {
+//     const next = slider.parentElement.querySelector(".swiper-button-next");
+//     const prev = slider.parentElement.querySelector(".swiper-button-prev");
+//     new Swiper(slider, {
+//       navigation:{
+//         nextEl:next,
+//         prevEl:prev,
+//       },
+//       breakpoints: {
+//         320: { slidesPerView: 1 },
+//         480: { slidesPerView: 2 },
+//         580: { slidesPerView: 3 },
+//         768: {
+//           slidesPerView: 4,
+//           spaceBetween: 20
+//         },
+//         1000: {
+//           slidesPerView: 4,
+//           spaceBetween: 50
+//         }
+//       }
+//     })
+//   })
+// }

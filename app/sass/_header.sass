@@ -11,11 +11,16 @@
   -moz-box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3)
   box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.3)
   background: #fff
+  &.fixed
+    & .container
+      padding-top: 15px
+      padding-bottom: 15px
+      transition: .2s
   & .container
     padding: 33px 80px 33px 15px
     display: flex
     align-items: center
-    position: relative
+    transition: .2s
   &__logo
     margin-right: 40px
     max-width: 130px
@@ -164,6 +169,8 @@
       margin-right: 10px
     &__search
       grid-area: search
+    &__nav
+      align-self: self-end
     &__menu
       grid-area: menu
 @media screen and ( max-width: 768px )
