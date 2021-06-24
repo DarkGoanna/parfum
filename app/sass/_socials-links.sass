@@ -1,0 +1,17 @@
+.socials-links
+  display: flex
+  align-items: center
+  & a
+    display: inline-block
+    vertical-align: top
+    &:not(:last-child)
+      margin-right: 36px
+    & svg
+      & path
+        fill: $dark
+        transition: .2s
+    &:hover
+      & svg
+        & path
+          fill: $yellow
+          transition: .2s

@@ -55,6 +55,7 @@ $yellow: #FFD700
     color: #000
     border: 1px solid #000
     transition: .2s
+    background: transparent
     &_active
         background: $beige
     &:hover,
@@ -98,7 +99,18 @@ $yellow: #FFD700
     background-repeat: no-repeat
 .pt
     padding-top: 100px
-
+.title-decor
+    position: relative
+    padding-left: 150px
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        width: 100px
+        height: 1px
+        background: $dark
 @media screen and ( max-width: 1000px )
     .title-1, h1
         font-size: 48px
@@ -120,3 +132,7 @@ $yellow: #FFD700
         font-size: 20px
     .btn
         height: 50px
+    .title-decor
+        padding-left: 50px
+        &::before
+            width: 40px

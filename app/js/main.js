@@ -71,41 +71,47 @@ document.addEventListener('scroll', () => {
 window.addEventListener('resize', fixHeaderHeight)
 
 // banner
-new Swiper(".banner", {
-  speed: 600,
-  parallax: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
-  navigation: {
-    nextEl: ".banner .swiper-button-next",
-    prevEl: ".banner .swiper-button-prev",
-  },
-});
+if (document.querySelector('.banner')) {
+  new Swiper(".banner", {
+    speed: 600,
+    parallax: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".banner .swiper-button-next",
+      prevEl: ".banner .swiper-button-prev",
+    },
+  });
+}
+
 
 // categories
-new Swiper(".categories__slider", {
-  speed: 600,
-  slidesPerView: 1,
-  spaceBetween: 23,
-  navigation: {
-    nextEl: ".categories__slider .swiper-button-next",
-    prevEl: ".categories__slider .swiper-button-prev",
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 23,
+if (document.querySelector('.categories__slider')) {
+  new Swiper(".categories__slider", {
+    speed: 600,
+    slidesPerView: 1,
+    spaceBetween: 23,
+    navigation: {
+      nextEl: ".categories__slider .swiper-button-next",
+      prevEl: ".categories__slider .swiper-button-prev",
     },
-    581: {
-      slidesPerView: 2,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 23,
+      },
+      581: {
+        slidesPerView: 2,
+      },
+      769: {
+        slidesPerView: 3,
+      },
     },
-    769: {
-      slidesPerView: 3,
-    },
-  },
-});
+  });
+}
+
 
 // catalog
 // if (document.querySelector('.catalog__slider')) {
@@ -133,3 +139,24 @@ new Swiper(".categories__slider", {
 //     })
 //   })
 // }
+
+// gallery
+if (document.querySelector('.gallery__slider')) {
+  new Swiper(".gallery__slider", {
+    speed: 600,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 16,
+      },
+      581: {
+        slidesPerView: 2,
+      },
+      769: {
+        slidesPerView: 3,
+      },
+    },
+  });
+}

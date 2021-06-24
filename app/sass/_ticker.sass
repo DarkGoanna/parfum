@@ -1,0 +1,81 @@
+.ticker
+  transform: translateX(20%)
+  margin-right: -20%
+  display: flex
+  flex-wrap: nowrap
+  animation: ticker 5s infinite linear
+  padding: 10px 0
+  &__element
+    width: 20%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: .2s
+    padding: 0 20px
+    & a
+      display: flex
+      align-items: center
+      justify-content: center
+      & span
+        &:not(:last-child)
+          margin-right: 4px
+
+  &:hover
+    -webkit-animation-play-state: paused
+    -moz-animation-play-state: paused
+    -o-animation-play-state: paused
+    animation-play-state: paused
+
+@keyframes ticker
+  0%
+    transform: translateX(0%)
+  100%
+    transform: translateX(-20%)
+
+@media screen and ( max-width: 1400px )
+  .ticker
+    &__element
+      & a
+        display: grid
+        grid-template-columns: max-content 1fr
+        & span
+          &:nth-of-type(2)
+            grid-column: 1/-1
+            text-align: center
+          &:not(:last-child)
+            margin-right: 0
+@media screen and ( max-width: 768px )
+  .ticker
+    animation: ticker 5s infinite linear
+    margin-right: -25%
+    &__element
+      width: 25%
+      &:nth-child(1)
+        display: none
+  @keyframes ticker
+    0%
+      transform: translateX(0%)
+    100%
+      transform: translateX(-25%)
+
+@media screen and ( max-width: 480px )
+  .ticker
+    animation: ticker 8s infinite linear
+    margin-right: -100%
+    &__element
+      width: 50%
+      &:nth-child(2),
+      &:nth-child(3)
+        display: none
+      & a
+        display: flex
+        & span
+          &:nth-of-type(2)
+            grid-column: auto
+          &:not(:last-child)
+            margin-right: 4px
+  @keyframes ticker
+    0%
+      transform: translateX(0%)
+    100%
+      transform: translateX(-50%)
