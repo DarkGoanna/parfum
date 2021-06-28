@@ -11,7 +11,6 @@
     & .news__btn
       margin-right: 130px
   &__title
-    margin-left: 150px
     margin-top: 28px
   &__inner
     margin-top: 42px
@@ -22,38 +21,13 @@
       max-width: 576px
       width: 100%
       margin-right: auto
-  &__btn
-    padding: 7px 22px 7px 0
-    position: relative
-    border-bottom: 1px solid $dark
-    display: inline-block
-    vertical-align: top
-
-    &::after
-      content: url(../img/news-arrow.svg)
-      position: absolute
-      top: 50%
-      right: 0
-      transform: translateY(-50%)
-      transition: .2s
-      transform-origin: left center
-    &:hover
-      &::after
-        transform: translateY(-50%) scale(1.4)
-        transition: .2s
-
 @media screen and ( max-width: 1000px )
   .news
     &__header
-      & .news__btn
+      & .btn_2
         margin-right: 0
-    &__title
-      margin-left: 0
     &__inner
       margin-left: 0
-@media screen and ( max-width: 768px )
-  .news
-    &__inner
       & .news-card
         max-width: 100%
 @media screen and ( max-width: 480px )

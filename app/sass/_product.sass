@@ -1,0 +1,83 @@
+.product
+  &__inner
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 70px
+  &__gallery
+    display: grid
+    grid-template-columns: 120px 1fr
+    gap: 20px
+    height: 377px
+    &_big
+      grid-column: 2/-1
+      grid-row: 1/-1
+      width: 448px
+      height: 100%
+      & .swiper-slide
+        height: 377px
+        width: 448px
+        display: flex
+        align-items: center
+        justify-content: center
+        & img
+          width: calc( 100% - 80px )
+          height: calc( 100% - 40px )
+    &_small
+      grid-column: 1/2
+      grid-row: 1/-1
+      & .swiper-slide
+        height: 120px
+        width: 120px
+        display: flex
+        align-items: center
+        justify-content: center
+        & img
+          width: calc( 100% - 20px )
+          height: calc( 100% - 10px )
+          opacity: 0.7
+      & .swiper-slide-thumb-active,
+      & .swiper-slide-thumb-active img
+        opacity: 1
+    & .swiper-slide
+      border: 1px solid #000
+    & img
+      object-fit: cover
+
+@media screen and ( max-width: 1000px )
+  .product
+    &__inner
+      gap: 40px
+    &__gallery
+      height: 300px
+      grid-template-columns: 80px 1fr
+      column-gap: 10px
+      &_big
+        width: 100%
+        & img, & .swiper-slide
+          height: 100%
+          width: 100%
+      &_small
+        & img, & .swiper-slide
+          height: 80px
+          width: 80px
+@media screen and ( max-width: 768px )
+  .product
+    &__inner
+      grid-template-columns: 100%
+    &__gallery
+      max-width: 80%
+      margin: auto
+@media screen and ( max-width: 580px )
+  .product
+    &__gallery
+      max-width: 100%
+@media screen and ( max-width: 480px )
+  .product
+    &__gallery
+      height: 250px
+      grid-template-columns: 60px 1fr
+      column-gap: 5px
+      &_small
+        & img, & .swiper-slide
+          height: 60px
+          width: 60px

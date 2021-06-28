@@ -50,28 +50,50 @@
     & img,
     & source
       width: 100%
+
+.contacts + .callback
+  margin-top: 60px
+
 @media screen and ( max-width: 1200px )
   .callback
     &__title
       padding-left: 20px
       &::before
         content: none
-    &__form
-      margin-left: 20px
     &__inner
       grid-template-columns: 1fr 350px
     &__image
       margin-top: -105px
       max-width: 350px
+@media screen and ( max-width: 1000px )
+  .callback
+    &__form
+      margin-left: 20px
 @media screen and ( max-width: 768px )
   .callback
     background-size: 100% 90px
     &__title
       height: 90px
+      padding-left: 0
+      max-width: 90%
+      margin: auto
+    &__form
+      margin-left: 0
+      max-width: 90%
+      margin: auto
     &__inner
       grid-template-columns: 100%
     &__image
       display: none
+  .contacts + .callback
+    margin-top: 30px
+
+@media screen and ( max-width: 580px )
+  .callback
+    &__title
+      max-width: 100%
+    &__form
+      max-width: 100%
 @media screen and ( max-width: 480px )
   .callback
     &__inner

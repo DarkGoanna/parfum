@@ -136,9 +136,23 @@
       width: 100%
       height: 2px
       background: $dark
+      transition: .2s
     &.open
+      justify-content: center
+      align-items: center
       & span
         background: #fff
+        transition: .2s
+        top: 50%
+        left: 50%
+        position: absolute
+        &:nth-child(1)
+          transform: translate(-50%, -50%) rotate(45deg)
+        &:nth-child(2)
+          opacity: 0
+          visibility: hidden
+        &:nth-child(3)
+          transform: translate(-50%, -50%) rotate(-45deg)
 
 @media screen and ( max-width: 1200px )
   .header
@@ -177,6 +191,10 @@
     & .container
       padding-top: 13px
       padding-bottom: 13px
+    &.fixed
+      & .container
+        padding-top: 13px
+        padding-bottom: 13px
     &__logo
       margin-right: 20px
     &__burger
@@ -274,6 +292,10 @@
       display: grid
       grid-template-areas: 'logo phone search burger'
       grid-template-columns: 80px 40px 40px 1fr
+    &.fixed
+      & .container
+        padding-top: 5px
+        padding-bottom: 5px
     &__phone
       & span
         display: none

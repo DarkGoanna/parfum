@@ -1,0 +1,21 @@
+.payment
+  & .container
+    padding: 60px 15px
+  &__inner
+    padding-left: 150px
+    margin-top: 40px
+    & ul,
+    & ol
+      padding-left: 20px
+    & ul
+      & li
+        list-style: none
+        &::before
+          content: '- '
+    & p
+      &:not(:last-child)
+        margin-bottom: 26px
+@media screen and ( max-width: 768px )
+  .payment
+    &__inner
+      padding-left: 0px
