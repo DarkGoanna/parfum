@@ -1,0 +1,40 @@
+.news-card
+  display: grid
+  grid-template-columns: 232px 1fr
+  gap: 56px
+  &__date
+    color: $light
+  &__title
+    color: #000
+    font-size: 18px
+    margin-top: 13px
+    font-weight: 700
+  &__excerpt
+    margin-top: 14px
+  &__btn
+    margin-top: 23px
+  &__image
+    & a
+      display: inline-block
+      vertical-align: top
+    & img,
+    & source
+      width: 100%
+      object-fit: cover
+@media screen and ( max-width: 768px )
+  .news-card
+    grid-template-columns: .35fr .65fr
+    gap: 25px
+@media screen and ( max-width: 580px )
+  .news-card
+    grid-template-columns: 100%
+    & a
+      width: 100%
+      & img,
+      & source
+        max-height: 300px
+@media screen and ( max-width: 480px )
+  .news-card
+    & img,
+    & source
+      max-height: 250px

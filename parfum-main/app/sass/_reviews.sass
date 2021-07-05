@@ -1,0 +1,100 @@
+.reviews
+  & .container
+    padding: 60px 15px
+  &__wrapper
+    border: 1px solid $dark
+    padding: 32px
+  &__header
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    & .reviews__btn
+      margin-right: 130px
+  &__title
+    margin-top: 28px
+  &__slider
+    margin-top: 26px
+    & .swiper-slide
+      &__wrapper
+        max-width: 760px
+        margin: auto
+        border: 1px solid $dark
+        padding: 33px
+      &__inner
+        background: $beige
+        padding: 60px 90px
+        display: grid
+        grid-template-columns: 1fr 1fr
+      &__description
+        grid-column: 1/-1
+        margin-top: 23px
+        color: #000
+      &__name
+        font-size: 18px
+        font-weight: 700
+        text-align: left
+        color: #000
+      &__date
+        color: $light
+        text-align: right
+      & .reviews__btn
+        margin-top: 20px
+        width: max-content
+    & .swiper-button-next,
+    & .swiper-button-prev
+      z-index: 2
+      width: 55px
+      height: 55px
+    & .swiper-button-next
+      content: url(../img/reviews-arrow.svg)
+      right: 70px
+    & .swiper-button-prev
+      content: url(../img/reviews-arrow.svg)
+      transform: rotate(180deg)
+      left: 70px
+@media screen and ( max-width: 1200px )
+  .reviews
+    &__slider
+      & .swiper-button-next,
+      & .swiper-button-prev
+        z-index: 2
+        width: 32px
+        height: 32px
+      & .swiper-button-next
+        right: 0
+      & .swiper-button-prev
+        left: 0
+@media screen and ( max-width: 1000px )
+  .reviews
+    &__slider
+      padding-bottom: 60px
+      & .swiper-button-next,
+      & .swiper-button-prev
+        top: auto
+        bottom: 0
+
+      & .swiper-button-next
+        right: 70px
+      & .swiper-button-prev
+        left: 70px
+    &__header
+      & .btn_2
+        margin-right: 0
+@media screen and ( max-width: 768px )
+  .reviews
+    &__slider
+      & .swiper-slide
+        &__wrapper
+          padding: 15px
+        &__inner
+          padding: 30px
+@media screen and ( max-width: 480px )
+  .reviews
+    &__wrapper
+      padding: 15px
+    &__slider
+      & .swiper-slide
+        &__wrapper
+          padding: 0
+        &__inner
+          padding: 15px

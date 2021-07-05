@@ -1,0 +1,27 @@
+.contacts
+  position: relative
+  & .container
+    padding: 60px 15px 0
+  &__inner
+    max-width: 1000px
+    width: 100%
+    margin: auto
+    margin-top: 60px
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 55px
+    padding-bottom: 85px
+  &__subtitle
+    font-weight: 700
+    font-size: 18px
+  &__description
+    margin-top: 15px
+@media screen and ( max-width: 1000px )
+  .contacts
+    &__inner
+      gap: 20px
+@media screen and ( max-width: 768px )
+  .contacts
+    &__inner
+      grid-template-columns: 100%
+      gap: 40px

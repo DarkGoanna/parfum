@@ -1,0 +1,59 @@
+.gallery
+  background-image: url(../img/gallery-bg-1.jpg), url(../img/gallery-bg-2.png)
+  background-repeat: no-repeat
+  background-position: center, 50% 0
+  background-size: 100% 140px, cover
+  height: 800px
+  & .container
+    height: 100%
+  &__title-wrapper
+    padding-top: 60px
+  &__title
+    font-weight: 500
+    line-height: 1
+    text-transform: uppercase
+    color: rgba($dark, .7)
+    &_1
+      text-align: right
+      margin-right: 30%
+      font-size: 96px
+    &_2
+      text-align: left
+      font-size: 144px
+      color: #fff
+      -webkit-text-stroke: 0.5px #bfb9b9
+      line-height: 0.8
+  & .swiper-slide
+    overflow: hidden
+    & img
+      width: 100%
+@media screen and ( max-width: 1000px )
+  .gallery
+    height: 600px
+    background-position: center 75%, 50% 0
+    &__title
+      &_1
+        text-align: center
+        margin-right: 0
+      &_2
+        text-align: center
+    &__slider
+      margin-top: 20px
+@media screen and ( max-width: 768px )
+  .gallery
+    height: auto
+    padding-bottom: 60px
+    background-size: 100% 70px, cover
+    &__title
+      &_1
+        font-size: 60px
+      &_2
+        font-size: 100px
+@media screen and ( max-width: 580px )
+  .gallery
+    background-position: center 60%, 50% 0
+    &__title
+      &_1
+        font-size: 60px
+      &_2
+        font-size: 100px

@@ -1,0 +1,38 @@
+.news
+  & .container
+    padding: 60px 15px
+  &__wrapper
+    border: 1px solid $dark
+    padding: 32px
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    & .news__btn
+      margin-right: 130px
+  &__title
+    margin-top: 28px
+  &__inner
+    margin-top: 42px
+    display: grid
+    row-gap: 72px
+    margin-left: 150px
+    & .news-card
+      max-width: 576px
+      width: 100%
+      margin-right: auto
+@media screen and ( max-width: 1000px )
+  .news
+    &__header
+      & .btn_2
+        margin-right: 0
+    &__inner
+      margin-left: 0
+      & .news-card
+        max-width: 100%
+@media screen and ( max-width: 480px )
+  .news
+    &__wrapper
+      padding: 15px
+    &__header-text
+      margin-right: 10px
