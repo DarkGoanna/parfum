@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 <svg width="79" height="74" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M42.451 73.065L78 38.012m0 0L41.676 1.174M78 38.012L.932 36.764" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/></svg>
+=======
+<svg width="79" height="74" viewBox="0 0 79 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4512 73.0652L78 38.0117M78 38.0117L41.6758 1.17424M78 38.0117L0.932216 36.7639" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+>>>>>>> 4d00aa2775b4e95defb5e7336d9eeb16858173c0

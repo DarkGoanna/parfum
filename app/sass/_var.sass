@@ -55,12 +55,37 @@ $yellow: #FFD700
     color: #000
     border: 1px solid #000
     transition: .2s
+    background: transparent
     &_active
         background: $beige
     &:hover,
     &:active
         background: $beige
         transition: .2s
+    &_2
+        padding: 7px 22px 7px 0
+        position: relative
+        border-bottom: 1px solid $dark
+        display: inline-block
+        vertical-align: top
+        &::after
+            position: absolute
+            top: 50%
+            right: 0
+            transform: translateY(-50%)
+            transition: .2s
+            transform-origin: left center
+        &_red
+            &::after
+                content: url(../img/arrow_red.svg)
+        &_dark
+            &::after
+                content: url(../img/arrow_dark.svg)
+        &:hover
+            &::after
+                transform: translateY(-50%) scale(1.4)
+                transition: .2s
+
 .container
     max-width: 1230px + (2 * 15px)
     padding: 0 15px
@@ -98,10 +123,25 @@ $yellow: #FFD700
     background-repeat: no-repeat
 .pt
     padding-top: 100px
-
+.title-decor
+    position: relative
+    padding-left: 150px
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        width: 100px
+        height: 1px
+        background: $dark
 @media screen and ( max-width: 1000px )
     .title-1, h1
         font-size: 48px
+    .title-decor
+        padding-left: 100px
+        &::before
+            width: 70px
 @media screen and ( max-width: 768px )
     .title-1, h1
         font-size: 36px
@@ -120,3 +160,7 @@ $yellow: #FFD700
         font-size: 20px
     .btn
         height: 50px
+    .title-decor
+        padding-left: 50px
+        &::before
+            width: 40px

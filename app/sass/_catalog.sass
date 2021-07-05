@@ -1,19 +1,11 @@
 .catalog
-  color: $dark
+  & .container
+    padding: 60px 15px
   &__title
     text-align: left
-    position: relative
-    padding-left: 150px
     margin-bottom: 66px
-    &::before
-      content: ''
-      position: absolute
-      top: 50%
-      left: 0
-      transform: translateY(-50%)
-      width: 100px
-      height: 1px
-      background: $dark
+  &__inner
+    margin-top: 36px
   &__row
     display: flex
     align-items: center
@@ -58,3 +50,33 @@
         display: grid
         grid-template-columns: repeat(4, 1fr)
         gap: 55px
+
+@media screen and ( max-width: 1000px )
+  .catalog
+    &__slider
+      &.no-slider
+        & .swiper-wrapper
+          grid-template-columns: repeat(3, 1fr)
+          gap: 30px
+
+@media screen and ( max-width: 768px )
+  .catalog
+    &__slider
+      &.no-slider
+        & .swiper-wrapper
+          gap: 10px
+
+@media screen and ( max-width: 600px )
+  .catalog
+    &__slider
+      &.no-slider
+        & .swiper-wrapper
+          grid-template-columns: repeat(2, 1fr)
+          gap: 20px
+
+@media screen and ( max-width: 480px )
+  .catalog
+    &__slider
+      &.no-slider
+        & .swiper-wrapper
+          grid-template-columns: 100%
